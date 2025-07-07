@@ -1,5 +1,6 @@
 package com.tracker.money_tracker.model.entities;
 
+import com.tracker.money_tracker.model.DTOs.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,6 +39,14 @@ public class Usuario {
     @Column(table = "es_activo", nullable = false)
     private Boolean esActivo;
 
-
+    public Usuario(UsuarioDTO usuarioDTO) {
+        this.nombre = usuarioDTO.nombre();
+        this.email = usuarioDTO.email();
+        this.password = usuarioDTO.password();
+        this.fechaRegistro = LocalDate.now();
+        this.pais = usuarioDTO.pais();
+        this.rol = Rol.USER;
+        this.esActivo = true;
+    }
 
 }
