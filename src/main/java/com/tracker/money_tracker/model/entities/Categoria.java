@@ -17,13 +17,13 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(table = "nombre", nullable = false)
+    @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    @Column(table = "color", nullable = false)
+    @Column(name = "color", nullable = false)
     private String color;
 
-    @Column(table = "icono")
+    @Column(name = "icono")
     private String icono;
 
     @ManyToOne

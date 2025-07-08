@@ -7,7 +7,7 @@ import lombok.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "user")
+@Table(name = "usuarios")
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,25 +18,26 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(table = "nombre",nullable = false)
+    @Column(name = "nombre",nullable = false)
     private String nombre;
 
-    @Column(table = "email", unique = true, nullable = false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(table = "password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(table = "fec_registro", nullable = false)
+    @Column(name = "fec_registro", nullable = false)
     private LocalDate fechaRegistro;
 
-    @Column(table = "pais", nullable = false)
+    @Column(name = "pais", nullable = false)
     private String pais;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "rol", nullable = false)
     private Rol rol;
 
-    @Column(table = "es_activo", nullable = false)
+    @Column(name = "es_activo", nullable = false)
     private Boolean esActivo;
 
     public Usuario(UsuarioDTO usuarioDTO) {

@@ -33,7 +33,7 @@ public class UsuarioService implements UserDetailsService {
 
         Usuario usuario = new Usuario(usuarioDTO);
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-        usuarioRepository.save(new Usuario(usuarioDTO));
+        usuarioRepository.save(usuario);
     }
 
     @Override

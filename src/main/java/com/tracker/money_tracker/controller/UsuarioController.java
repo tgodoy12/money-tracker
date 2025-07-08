@@ -1,7 +1,6 @@
 package com.tracker.money_tracker.controller;
 
 import com.tracker.money_tracker.model.DTOs.UsuarioDTO;
-import com.tracker.money_tracker.repository.UsuarioRepository;
 import com.tracker.money_tracker.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
